@@ -41,7 +41,7 @@ reserved = {
 }
 
 tokens = [
-    #'MULTI_COMMENT',
+    # 'MULTI_COMMENT',
     'FLOAT',
     'LITERAL',
     'INT_VAL',
@@ -63,11 +63,11 @@ tokens = [
 
 # Regular expression rules for simple tokens
 t_PLUS    = r'\+'
-t_PLUSP    = r'\++'
+t_PLUSP    = r'\+\+'
 t_MINUS   = r'\-'
-t_MINUSM   = r'\--'
+t_MINUSM   = r'\-\-'
 t_TIMES   = r'\*'
-t_DIVIDE  = r'/'
+t_DIVIDE  = r'\/'
 t_LPAREN  = r'\('
 t_RPAREN  = r'\)'
 
@@ -75,12 +75,12 @@ t_RPAREN  = r'\)'
 #COMPARATORS
 t_COM1    = r'\>'
 t_COM2    = r'\<+'
-t_COM3    = r'\>='
-t_COM4    = r'\<='
-t_COM5    = r'\=='
-t_COM6    = r'\!='
-t_COM7    = r'\<<'
-t_COM8    = r'\>>'
+t_COM3    = r'\>\='
+t_COM4    = r'\<\='
+t_COM5    = r'\=\='
+t_COM6    = r'\!\='
+t_COM7    = r'\<\<'
+t_COM8    = r'\>\>'
 
 #RESERVEDS
 t_RES1    = r'\{'
@@ -91,6 +91,8 @@ t_RES5    = r'\,'
 t_RES6    = r'\='
 t_RES7    = r'\"'
 t_RES8    = r'\$'
+
+
 
 def main():
     # Build the lexer
