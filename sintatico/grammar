@@ -1,5 +1,5 @@
-ENTRADA -> TEMPOX
+<ENTRADA> -> TEMPOX
 X -> +TEMPOX | @
 TEMPO -> FY
 Y -> *FY | @
-F -> (E) | a
+F -> (ENTRADA) | a

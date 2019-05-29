@@ -132,6 +132,7 @@ def follow(s, productions, ans):
 	return ans
 
 def first(s, productions):
+	print("\ns:\n", s)
 	c = s[0]
 	ans = set()
 	if c.isupper():
@@ -150,15 +151,17 @@ def first(s, productions):
 
 if __name__=="__main__":
 	productions=dict()
-	grammar = open("grammar2", "r")
+	grammar = open("grammar", "r")
 	first_dict = dict()
 	follow_dict = dict()
 	flag = 1
 	start = ""
 	for line in grammar:
 		l = re.split("( |->|\n|\||)*", line)
+		print("\nl\n", l)
 		lhs = l[0]
 		rhs = set(l[1:-1])-{''}
+		print('\nRHS\n', rhs)
 		if flag :
 			flag = 0
 			start = lhs
