@@ -59,6 +59,14 @@ def prepare():
     print_stack()
 
 
+#RETIRA O TEXTO DOS ARQUIVOS PARA TRANSFORMAR EM INPUT DO LEXICO
+def get_code(num):
+    f = open("ex"+num+".txt", 'r')
+    code = ""
+    for line in f:
+        code += line
+    return str(code)
+
 def check(name, pos):
     prox = _STACK[pos+1][1]
     ante =  _STACK[pos-1][1]
@@ -90,8 +98,21 @@ def check(name, pos):
         _STACK[pos][0] = 9
     
 
-def print_stack():
-    print("LISTA DE TOKENS:")
-    print("---------------------------------")
+
+def prepare():
+    i = 0
+    #PREPARANDO NOMES SE SAO FUNCAO OU VARIAVEIS
     for s in _STACK:
-        print("token_id: "+str(s[0]) + " | lexema: "+str(s[1]) + " | linha: "+str(s[2]) )
+        if(s[0] == 99):
+            check(s[1], i)
+        i += 1
+
+    print_stack()
+
+def print_stack():
+#    f = open("../tokenized", "w+")
+    print("---------------------------------")
+    print("Arquivo tokenized gerado, consulte para analisar os tokens reconhecidos....")
+    print("---------------------------------")
+#    for s in _STACK:
+#        f.write("T_ID:" + str(s[0]) + "| Lexema:" + str(s[1]) + "| Line:" + str(s[2])+"\n")

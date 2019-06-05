@@ -123,10 +123,13 @@ def main():
     lexer.input(data)
 
     # Tokenize
+    f = open("../tokenized", "w+")
     while True:
         tok = lexer.token()
         if not tok: 
             break      # No more input
+        f.write(tok.type)
+        f.write(" ")
         print (tok.type, tok.value, tok.lineno, tok.lexpos)
         lib.classify(tok.value, tok.type, tok.lineno)
     
